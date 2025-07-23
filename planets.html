@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .container {
+            font-size: 10px;
+            width: 60em;
+            height: 60em;
+            position: relative;
+        }
+
+        .sun {
+            position: absolute;
+            top: 22.5em;
+            left: 22.5em;
+            width: 15em;
+            height: 15em;
+            border-radius: 50%;
+            box-shadow: 0 0 15em 2em rgba(241, 87, 4, 0.6);
+            background-color: rgb(237, 71, 16);
+        }
+
+        .earth, .moon {
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+        }
+
+        .earth {
+            top: 7.5em;
+            left: 7.5em;
+            width: 45em;
+            height: 45em;
+            animation: orbit 36.5s linear infinite;
+        }
+
+        .moon {
+            top: 0;
+            right: 0;
+            width: 10em;
+            height: 10em;
+            animation: orbit 5.5s linear infinite;
+        }
+
+        .earth::before,
+        .moon::before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .earth::before {
+            top: 4em;
+            right: 4em;
+            width: 4em;
+            height: 4em;
+            background-color: rgb(37, 133, 241);
+        }
+
+        .moon::before {
+            top: 1em;
+            right: 0.6em;
+            width: 1.8em;
+            height: 1.8em;
+            background-color: silver;
+        }
+
+        @keyframes orbit {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+</html>
